@@ -1,0 +1,764 @@
+
+/*********** Start Global Styles  ***********/
+body{
+    font-family: "Poppins", sans-serif;
+}
+h1,h2,h3,h4,h5,h6
+{
+    font-family: "Montserrat", sans-serif;
+}
+:root
+{
+    --text-color:rgb(116, 129, 130);
+    --text-light-color:rgb(153, 153, 153);
+    --main-block-padding:5rem;
+    --main-bg:#F7F7F7;
+}
+.page-title
+{
+    margin: auto;
+    text-align: center;
+    width: fit-content;
+}
+.page-title h2
+{
+    font-size:40px ;
+    font-weight: 900;
+    position: relative;
+    z-index: 222 !important;
+    margin-bottom: 0;
+}
+.page-title h2::before
+{
+    content: '';
+    position: absolute;
+    background-image: url(../image/dots.png);
+    height: 80%;
+    width: 100%;
+    top: 33%;
+    left: 0;
+    z-index: -1;
+}
+/*********** End Global Styles  ***********/
+
+/*********** Start loader  ***********/
+.loader
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f8fbde;
+    transition: opacity 0.7s , visibility 0.7s;
+}
+.loader-hidden
+{
+    opacity: 0;
+    visibility: hidden;
+}
+.loader::after
+{
+    content: '';
+    width: 70px;
+    height: 70px;
+    border: 15px solid #dddddd;
+    border-top-color: #221f1f ;
+    border-radius: 50%;
+    animation: loading 0.7s ease infinite;
+}
+@keyframes loading {
+    from
+    {
+        transform: rotate(0turn);
+    }
+    to
+    {
+        transform: rotate(1turn);
+    }
+    
+}
+/*********** End loader  ***********/
+
+/*********** Start Model  ***********/
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.561); 
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color:transparent;
+    border-radius: 5px;
+    width: 100vh ;
+    text-align: center;
+    border: 0;
+    background-clip: none;
+}
+
+.close-button {
+    color: #fff;
+    float: right;
+    font-size: 30px;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+    width: fit-content;
+    background-color: transparent;
+    margin-left: auto;
+}
+/*********** End Model  ***********/
+
+/*********** Start Navbar  ***********/
+.my-nav
+{
+    padding-block: 2.1875rem;
+    background-color: transparent;
+}
+.my-nav .mynav-btn
+{
+    color: #fff;
+    font-size: 20px;
+}
+.my-nav .navbar-nav .nav-link
+{
+    --bs-nav-link-color:#fff !important;
+    margin-left: 1.2rem;
+    --bs-nav-link-hover-color:#fff;
+    font-weight:400 ;
+    font-size:14px !important;
+}
+.my-nav .navbar-nav .nav-item  .active
+{
+    position: relative;
+    padding-bottom: 0;
+}
+.my-nav .navbar-nav .nav-item .active::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    min-width: 75%;
+    height:2px ;
+    background-color: #fff !important;
+}
+.my-nav .navbar-brand h2
+{
+    font-weight:800;
+    font-size:18px !important;
+}
+.my-nav.sticky
+{
+    background-color:#ffff;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.15) ;
+    padding-block: .75rem ;
+}
+.my-nav.sticky .navbar-brand h2
+{
+    color: #000 !important;
+}
+.my-nav.sticky a ,.my-nav.sticky .mynav-btn
+{
+    color: #000 !important;
+}
+.my-nav.sticky .navbar-nav .nav-item .active::before
+{
+    background-color: #000 !important;
+}
+/*********** End Navbar  ***********/
+
+/*********** Start Home Section  ***********/
+.home
+{
+    background-image: url(../image/bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.home .content
+{
+    background-color: #000000a8;
+    height: 100vh;
+}
+.home .content .title
+{
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: 600;
+    width:100%;
+}
+.home .content .title span
+{
+    font-weight: 200;
+    font-size: 60px;
+}
+.home .content .title .element
+{
+    font-weight: 400;
+}
+.home .content .title h1
+{  
+    font-weight: 800;
+    font-size:50px ;
+    line-height:55px ;
+}
+.home .content .title .icons a
+{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: #00000052;
+    text-decoration: none;
+    color: #fff;
+    margin-left: .625rem;
+    margin-top: 2.5rem;
+}
+.home .content .title .icons i
+{
+    font-size: 14px;
+    color: #fff;
+}
+/*********** End Home Section  ***********/
+
+/*********** Start About Section  ***********/
+#about
+{
+    padding-block: var(--main-block-padding);
+}
+#about.progress-bar {
+    width: 0;
+    transition: width 2s ease;
+}
+#about .inner1 img
+{
+    width: 95%;
+}
+#about .inner1::after
+{
+    content: '';
+    position: absolute;
+    background-image: url(../image/dots.png);
+    height: 82%;
+    width: 100%;
+    top: 25%;
+    left: -6%;
+    z-index: -111;
+}
+#about .container .inner .title h2
+{
+    font-weight: 800;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+#about .container .inner .title span
+{
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--text-light-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+#about .container .inner p
+{
+    color: var(--text-color);
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 15px;
+    margin-bottom:0;
+}
+#about .container .inner p span
+{
+    font-weight: 700;
+}
+#about .container .inner .skills
+{
+    margin-top: 1.875rem;
+}
+#about .container .inner .bar-color
+{
+    background-color:var(--main-bg);
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset;
+    --bs-progress-height:1.7rem;
+    margin: .625rem 0 1.875rem 0;
+}
+#about .container .inner .skill-bar
+{
+    background-color: #000;
+}
+#about .container .inner .skill-bar span
+{
+    font-size:13px ;
+    font-weight:500 ;
+    font-family: "Montserrat", sans-serif;
+}
+#about .container .inner .about-btn
+{
+    margin-top: 3.125rem;
+}
+#about .container .inner .about-btn a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    border-radius: 5px;
+    border: #000 1px solid;
+    padding:  .625rem 1.875rem;
+    transition: all 1s;
+    margin-left: 0;
+    font-size:13px ;
+    font-weight:400 ;
+}
+#about .container .inner .about-btn a:hover{
+    color:#000;
+    background-color: #fff;
+}
+#about .container .inner .about-btn .link{
+    text-decoration: none;
+    color:#000;
+    background-color: #fff;
+    border-radius: 5px;
+    border: #000 1px solid;
+    padding:  .625rem 1.875rem;
+    transition: all 1s;
+}
+#about .container .inner .about-btn .link:hover{
+    color: #fff;
+    background-color: #000;
+}
+/*********** End About Section  ***********/
+
+/*********** Start Services Section  ***********/
+#services
+{
+    padding-block: var(--main-block-padding);
+    background-color: var(--main-bg);
+}
+#services .inner
+{
+    padding-inline: 1.25rem;
+    padding-block: 3.125rem;
+    box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1);
+    border-radius: .3125rem;
+}
+#services .inner:hover span
+{
+    background-color: #000;
+}
+#services .inner:hover i
+{
+    color: #fff;
+}
+#services .inner span
+{
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    background-color:#f4f4f4;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.9s;
+}
+#services .inner span i
+{
+    font-size: 25px;
+    transition: all 0.7s;
+}
+#services .inner h3
+{
+    font-size:18px ;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+#services .inner p
+{
+    font-size:14px ;
+    font-weight: 400;
+    color: var(--text-color);
+}
+/*********** End Services Section  ***********/
+
+/*********** Start Works Section  ***********/
+#work
+{
+    padding-block: var(--main-block-padding);
+}
+#work .mynav-tabs
+{
+    margin-top: 4.375rem;
+    margin-bottom:1.5625rem;
+}
+#work .mynav-tabs li .nav-link 
+{
+    background-color: transparent;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0;
+    margin: .9375rem;
+    padding-bottom: .3125rem;
+}
+#work .mynav-tabs li .nav-link.active
+{
+    position: relative;
+}
+#work .mynav-tabs .nav-item .nav-link.active::before
+{
+    width: 95%;
+}
+#work .mynav-tabs .nav-item .nav-link::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height:2px ;
+    background-color: #000 !important;
+    transition: all 0.5s !important;
+}
+#work .inner
+{
+    position: relative;
+}
+#work .inner .layer
+{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    transition: all 0.7s;
+    transform: translateY(10px);
+}
+#work .inner:hover .layer
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+#work .inner .layer .caption
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+#work .inner .layer .caption h3
+{
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: .9375rem;
+}
+#work .inner .layer .caption a
+{
+    font-size: 13px;
+    color: #fff;
+    margin-left: .32rem;
+    border-radius: 50%;
+    border: 1px #000 solid;
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+#work .inner .layer .caption a:hover
+{
+    color: #000;
+    background-color: #fff;
+}
+/*********** End Works Section  ***********/
+
+/*********** Start Clients Section  ***********/
+#clients
+{
+    padding-block: var(--main-block-padding);
+    padding-bottom:4.0625rem ;
+    background-color: var(--main-bg);
+}
+#clients .carousel-indicators button
+{
+    border-radius: 50% !important;
+    width: 10px;
+    height: 10px;
+    margin: .3125rem .4375rem;
+    background-color: var(--text-color) !important;
+}
+#clients .content .img-character
+{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    text-align: center;
+    margin-bottom: 1.3rem;
+}
+#clients .carousel-inner
+{
+    margin-top: 4.375rem;
+    width: 70%;
+}
+#clients .carousel-inner p
+{
+    font-size: 15px;
+    color: var(--text-color);
+    word-spacing: 2px;
+    line-height: 1.6;
+}
+#clients .carousel-inner h3
+{
+    font-size: 16px;
+    font-weight:600 ;
+    color: rgb(52, 52, 52);
+    line-height: 18px;
+    margin-top: 1.875rem;
+    margin-bottom: .3125rem;
+}
+#clients .carousel-inner span
+{
+    font-size: 12px;
+    font-weight:600 ;
+    color: rgb(136, 136, 136);
+    line-height: 17px;
+    margin-bottom: 1.875rem;
+    display: inline-block;
+}
+/*********** End Clients Section  ***********/
+
+/*********** Start Counter Section  ***********/
+.counter
+{
+    background-color: #fff;
+    padding: 6rem 0;
+}
+.counter .inner .icon
+{
+    position: relative;
+}
+.counter .inner .num
+{
+    font-size: 30px;
+    width: 900;
+    margin-block: 1.04rem;
+    display: inline-block;
+    color:  rgb(52, 52, 52);
+}
+.counter .inner span
+{
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0;
+    color: var(--text-color);
+}
+.counter .container .inner .icon i
+{
+    font-size: 30px !important;
+    color:  rgb(52, 52, 52);
+}
+/*********** End Counter Section  ***********/
+
+/*********** Start Team Section  ***********/
+#team
+{
+    background-color: var(--main-bg);
+    padding-block: var(--main-block-padding);
+}
+#team .inner
+{
+    overflow: hidden;
+}
+#team .inner img
+{
+    transition: all 0.8s;
+}
+#team .inner .img 
+{
+    position: relative;
+    overflow: hidden;
+}
+#team .inner .img .layer
+{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    transform: rotateY(180deg);
+    transition: all 0.7s;
+}
+#team .inner .img:hover img
+{
+    transform: scale(1.15,1.15);
+}
+#team .inner:hover .layer
+{
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+#team .inner .img .layer .icons
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+#team .inner .img .layer .icons span
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; 
+    margin-left: .75rem;
+    border: 1px #000 solid;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    color: #fff;
+    transition: all 0.5s;
+    font-size: 20px;
+}
+#team .inner .img .layer .icons span:hover
+{
+    color: #000;
+    background-color: #fff;
+}
+#team .inner .img-footer
+{
+    background-color: #5B5B5B;
+    padding:1.25rem  1.5625rem;
+}
+#team .inner .img-footer h3
+{
+    font-size:25px ;
+    font-weight:500 ;
+    margin-bottom: .3125rem;
+}
+#team .inner .img-footer h4
+{
+    font-size:20px ;
+    font-weight:700 ;
+    text-transform: uppercase;
+}
+/*********** End Team Section  ***********/
+
+/*********** Start Contact Section  ***********/
+#contact
+{
+    padding-block: var(--main-block-padding);
+}
+#contact .container
+{
+    width: 75%;
+}
+#contact .item
+{
+    margin-bottom: 1.875rem;
+    margin: auto;
+}
+#contact .item h3
+{
+    font-weight:700 ;
+    font-size: 16px;
+    margin-bottom: 0.625rem;
+    margin-top: 1.25rem;
+}
+#contact .item p
+{
+    font-weight:400 ;
+    font-size: 15px;
+    margin-bottom: 0;
+    color: var(--text-light-color);
+}
+#contact .item span
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; 
+    margin-left: .75rem;
+    border: 1px #f4f4f4 solid;
+    width: 60px;
+    height: 60px;
+    background-color:#f4f4f4;
+    color: #000;
+    transition: all 0.7s;
+    font-size: 25px;
+}
+#contact .item span:hover
+{
+    color: #fff;
+    background-color: #000;
+}
+#contact .head-contact
+{
+    margin-top: 4.5rem;
+}
+#contact form
+{
+    margin-top: 3.75rem;
+}
+#contact .form-input input[placeholder] ,
+#contact .form-input textarea[placeholder]
+{
+    font-size: 14px;
+}
+#contact .form-input input ,
+#contact .form-input textarea
+{
+    border: none;
+    border-radius: 5px;
+    background: #f4f4f4;
+    box-shadow: 0 0 7  #f4f4f4 inset;
+    outline: none;
+    padding-top: 9px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+}
+#contact form .submit-btn
+{
+    color: #fff;
+    background-color: #000;
+    border-radius: 5px;
+    border: #000 1px solid;
+    padding: .625rem 2.5rem;
+    font-size: 13px;
+    transition: all 1s;
+}
+#contact form .submit-btn:hover{
+    color: #000;
+    background-color: #fff;
+}
+/*********** End Contact Section  ***********/
+
+/*********** Start Footer Section  ***********/
+footer
+{
+    padding-block:2rem ;
+    background-color: #1C1C1C;
+}
+footer p
+{
+    color: var(--text-color);
+    margin-bottom: 0;
+    font-size: 13px;
+    font-weight:400 ;
+}
+/*********** End Footer Section  ***********/

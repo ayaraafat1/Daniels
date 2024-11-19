@@ -1,0 +1,68 @@
+@media screen and (max-width: 992px) {
+      /* ************** Navbar ************** */
+    .my-nav .nav-item .nav-link.active::before {
+        visibility: hidden;
+    }
+    .my-nav
+    {
+        padding-top: .625rem;
+    }
+    .my-nav .ul-special
+    {
+        text-align: center;
+        height: 55vh;
+        width: 100%;
+        background-color: #fff;
+        
+    }
+    .my-nav .ul-special li
+    {
+        margin-bottom: .3125rem;
+        margin-top: .5rem;
+    }
+    .my-nav .ul-special li .active
+    {
+        
+        margin-top: 15px;
+    }
+    .my-nav .nav-item .nav-link {
+        color: #333232 !important;
+    }
+    .my-nav .mynav-btn:focus ,.my-nav .mynav-btn:active {
+        outline: none !important; 
+        border: none !important;
+        box-shadow: none !important;  
+    }
+      /* ************** Navbar ************** */
+    
+    /* ************** Home ************** */
+    .home .content .title span
+    {
+        font-size: 30px !important;
+    }
+    .home .content .title .icons a
+    {
+    margin-top: 1.5rem !important;
+    }
+     /* ************** Home ************** */
+
+    /* ************** About ************** */
+    #about .inner1 img
+    {  
+        margin-inline: auto !important;
+    }
+    /* ************** About ************** */
+
+     /* ************** Contact ************** */
+    #contact .container
+    {
+        width: 90% !important;
+    }
+    #contact .form-input input ,
+    #contact .form-input textarea
+    {
+        width: 100%;
+        
+    }
+     /* ************** Contact ************** */
+}
