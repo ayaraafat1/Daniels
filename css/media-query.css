@@ -65,4 +65,7 @@
         
     }
      /* ************** Contact ************** */
+     .light-container .contain {
+        width: 85% !important;
+      }
 }
