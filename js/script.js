@@ -1,27 +1,27 @@
-// ============ Start typed.js ==============//
+//? ============ Start typed.js ==============//
 var typed = new Typed(".element", {
   strings: ["Larry Daniels", "Deveploper", "Designer"],
   typeSpeed: 20,
   backSpeed: 30,
   loop: true,
 });
-// ============ End typed.js ==============//
+// ?============ End typed.js ==============//
 
-//  =========== Start Scroll-Navbar ===========//
+// ? =========== Start Scroll-Navbar ===========//
 window.addEventListener("scroll", function () {
   var navbar = document.querySelector("nav");
   navbar.classList.toggle("sticky", window.scrollY > 0);
 });
-//  =========== End Scroll-Navbar ===========//
+// ? =========== End Scroll-Navbar ===========//
 
-// =========== Start Counter.js ===========//
-const counters = document.querySelectorAll('#counter .num');
-const duration = 1000; 
+//? =========== Start Counter.js ===========//
+const counters = document.querySelectorAll("#counter .num");
+const duration = 1000;
 
 function startCounting() {
-  counters.forEach(counter => {
-    const target = +counter.getAttribute('data-target'); 
-    const increment = target / (duration / 50); 
+  counters.forEach((counter) => {
+    const target = +counter.getAttribute("data-target");
+    const increment = target / (duration / 50);
     let current = 0;
 
     const updateCount = () => {
@@ -38,28 +38,31 @@ function startCounting() {
   });
 }
 
-const section = document.getElementById('counter');
-const observer = new IntersectionObserver((entries) => {
-  const entry = entries[0];
-  if (entry.isIntersecting) {
-    startCounting();
-    observer.unobserve(section); 
+const section = document.getElementById("counter");
+const observer = new IntersectionObserver(
+  (entries) => {
+    const entry = entries[0];
+    if (entry.isIntersecting) {
+      startCounting();
+      observer.unobserve(section);
+    }
+  },
+  {
+    threshold: 0.5,
   }
-}, {
-  threshold: 0.5 
-});
+);
 
 observer.observe(section);
-// =========== End Counter.js ===========//
+//? =========== End Counter.js ===========//
 
-// =========== Start progress Bar ===========//
+//? =========== Start progress Bar ===========//
 document.addEventListener("DOMContentLoaded", function () {
   const progressBars = document.querySelectorAll(".progress-bar");
   const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
+    (entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          progressBars.forEach(bar => {
+          progressBars.forEach((bar) => {
             const target = bar.getAttribute("data-target");
             bar.style.width = target + "%";
           });
@@ -74,32 +77,74 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(skillsSection);
   }
 });
-// =========== End progress Bar ===========//
+//? =========== End progress Bar ===========//
 
-// =========== Start Model ===========//
-document.addEventListener("DOMContentLoaded", function() {
-  const modalTriggerLinks = document.querySelectorAll(".fa-magnifying-glass-plus");
+//? =========== Start Model ===========//
 
-  modalTriggerLinks.forEach(link => {
-      link.addEventListener("click", function(event) {
-          event.preventDefault();
-          openModal();
-      });
+let imagesContainer = [
+  "image/portfolio/1.jpg",
+  "image/portfolio/2.jpg",
+  "image/portfolio/3.jpg",
+  "image/portfolio/4.jpg",
+  "image/portfolio/5.jpg",
+  "image/portfolio/6.jpg",
+];
+let startIndex;
+let plusArr =document.querySelectorAll(".plus");
+document.querySelector(".close").addEventListener("click", closeModal);
+document.querySelector(".next").addEventListener("click",function(){
+  moveSlide(1)
+})
+document.querySelector(".prev").addEventListener("click",function(){
+  moveSlide(-1)
+})
+for (let x = 0; x < plusArr.length; x++){
+  plusArr[x].addEventListener("click", function (e) {
+    e.preventDefault(); 
+    let innerDiv = this.closest(".inner");
+    let img = innerDiv.querySelector(".img img");
+  
+    if (img) {
+       imagePath = img.getAttribute("src");
+      console.log("Clicked Image Path:", imagePath);
+      document
+        .querySelector(".img-container  .img")
+        .setAttribute("src", `${imagePath}`);
+        startIndex = imagesContainer.indexOf(imagePath);
+      openModal();
+    }
   });
-});
+}
+
+
+function moveSlide(step) {
+  
+   startIndex = startIndex + step;
+
+  if(startIndex ===imagesContainer.length){
+    startIndex = 0
+         }
+
+  if (startIndex < 0) {
+    startIndex = imagesContainer.length - 1;
+  }
+
+  let currentSrc = imagesContainer[startIndex];
+  document
+  .querySelector(".img-container  .img")
+  .setAttribute("src", `${currentSrc}`);
+}
 
 function openModal() {
-  const modal = document.getElementById("myModal");
-  modal.style.display = "flex";
+  document.querySelector(".light-container").classList.remove("d-none");
 }
 
 function closeModal() {
-  const modal = document.getElementById("myModal");
-  modal.style.display = "none"; 
+  document.querySelector(".light-container").classList.add("d-none");
 }
-// =========== Start Model ===========//
+//? =========== Start Model ===========//
 
-// =========== Strat Loading ===========//
+//? =========== Strat Loading ===========//
 window.addEventListener("load", () => {
   const loader = document.querySelector(".loader");
   loader.classList.add("loader-hidden");
@@ -107,4 +152,4 @@ window.addEventListener("load", () => {
     document.body.removeChild("loader");
   });
 });
-// =========== End Loading ===========//
+//? =========== End Loading ===========//
